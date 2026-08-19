@@ -1,74 +1,85 @@
-"management_groups":
-- "archetypes":
-  - "root_custom"
-  "display_name": "Azure Landing Zones"
-  "exists": true
-  "id": "alz"
-  "parent_id": null
-- "archetypes":
-  - "platform_custom"
-  "display_name": "Platform"
-  "exists": false
-  "id": "platform"
-  "parent_id": "alz"
-- "archetypes":
-  - "landing_zones_custom"
-  "display_name": "Landing Zones"
-  "exists": false
-  "id": "landingzones"
-  "parent_id": "alz"
-- "archetypes":
-  - "corp_custom"
-  "display_name": "Corp"
-  "exists": false
-  "id": "corp"
-  "parent_id": "landingzones"
-- "archetypes":
-  - "online_custom"
-  "display_name": "Online"
-  "exists": false
-  "id": "online"
-  "parent_id": "landingzones"
-- "archetypes":
-  - "local_custom"
-  "display_name": "Local"
-  "exists": false
-  "id": "local"
-  "parent_id": "landingzones"
-- "archetypes":
-  - "sandbox_custom"
-  "display_name": "Sandbox"
-  "exists": false
-  "id": "sandbox"
-  "parent_id": "alz"
-- "archetypes":
-  - "security_custom"
-  "display_name": "Security"
-  "exists": false
-  "id": "security"
-  "parent_id": "platform"
-- "archetypes":
-  - "management_custom"
-  "display_name": "Management"
-  "exists": false
-  "id": "management"
-  "parent_id": "platform"
-- "archetypes":
-  - "connectivity_custom"
-  "display_name": "Connectivity"
-  "exists": false
-  "id": "connectivity"
-  "parent_id": "platform"
-- "archetypes":
-  - "identity_custom"
-  "display_name": "Identity"
-  "exists": false
-  "id": "identity"
-  "parent_id": "platform"
-- "archetypes":
-  - "decommissioned_custom"
-  "display_name": "Decommissioned"
-  "exists": false
-  "id": "decommissioned"
-  "parent_id": "alz"
-"name": "alz_custom"
+name: alz_custom
+management_groups:
+  - id: alz-demo1
+    display_name: Azure Landing Zones
+    archetypes:
+      - root_custom
+    exists: false
+    parent_id: null
+
+  - id: platform-demo1
+    display_name: Platform
+    archetypes:
+      - platform_custom
+    exists: false
+    parent_id: alz-demo1
+
+  - id: landingzones-demo1
+    display_name: Landing Zones
+    archetypes:
+      - landing_zones_custom
+    exists: false
+    parent_id: alz-demo1
+
+  - id: corp-demo1
+    display_name: Corp
+    archetypes:
+      - corp_custom
+    exists: false
+    parent_id: landingzones-demo1
+
+  - id: online-demo1
+    display_name: Online
+    archetypes:
+      - online_custom
+    exists: false
+    parent_id: landingzones-demo1
+
+  - id: local-demo1
+    display_name: Local
+    archetypes:
+      - local_custom
+    exists: false
+    parent_id: landingzones-demo1
+
+  - id: sandbox-demo1
+    display_name: Sandbox
+    archetypes:
+      - sandbox_custom
+    exists: false
+    parent_id: alz-demo1
+
+  - id: security-demo1
+    display_name: Security
+    archetypes:
+      - security_custom
+    exists: false
+    parent_id: platform-demo1
+
+  - id: management-demo1
+    display_name: Management
+    archetypes:
+      - management_custom
+    exists: false
+    parent_id: platform-demo1
+
+  - id: connectivity-demo1
+    display_name: Connectivity
+    archetypes:
+      - connectivity_custom
+    exists: false
+    parent_id: platform-demo1
+
+  - id: identity-demo1
+    display_name: Identity
+    archetypes:
+      - identity_custom
+    exists: false
+    parent_id: platform-demo1
+
+  - id: decommissioned-demo1
+    display_name: Decommissioned
+    archetypes:
+      - decommissioned_custom
+    exists: false
+    parent_id: alz-demo1
